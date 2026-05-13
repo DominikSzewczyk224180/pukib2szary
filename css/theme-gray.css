@@ -1,0 +1,131 @@
+/* =========================================================
+   PUKiB, theme-gray.css
+   Testowa wersja w odcieniach szarości na życzenie klienta.
+   Ładowany JAKO OSTATNI plik CSS w <head>, nadpisuje paletę.
+   Bez ingerencji w pozostałe pliki, w razie czego do wycięcia
+   jednym ruchem (usuń <link> w index.html i tyle).
+   ========================================================= */
+
+:root {
+  /* Powierzchnie, główne tło i jego warianty.
+     Było kremowe (#f4f1ea), teraz szare zgodnie z prośbą. */
+  --paper:   #34363e;   /* główne tło strony */
+  --paper-2: #3d4049;   /* lekko jaśniejsze, karty/inputy/elevated */
+  --paper-3: #a8aab3;   /* jasny szary, używany jako muted text na sekcjach ciemnych */
+
+  /* Sekcje ciemne (footer, topbar, .section-dark), były near-black.
+     Zostawiam jeszcze ciemniejsze niż --paper, żeby rytm jasne/ciemne
+     między sekcjami się zachował (sekcje "ciemne" są wyraźnie głębsze). */
+  --ink:   #1a1c22;
+  --ink-2: #232529;
+  --ink-3: #95979f;     /* muted text na --paper (szarym), musi być jasne żeby było czytelne */
+
+  /* Linie i obramowania.
+     Były czarne na kremowym, teraz białe alpha na szarym. */
+  --line:      rgba(255, 255, 255, 0.22);
+  --line-soft: rgba(255, 255, 255, 0.10);
+
+  /* Czerwień zostaje bez zmian, to brand */
+}
+
+/* =========================================================
+   Tekst, body i wszystko co domyślnie dziedziczy
+   ========================================================= */
+
+body {
+  color: #ebecf0;
+}
+
+/* Miejsca gdzie color: var(--ink) jest jawnie napisane,
+   te nie podchwycą zmiany body, trzeba ręcznie zjasnić.
+   (przeglądnąłem grep'em wszystkie wystąpienia color: var(--ink)
+   w style.css / home.css / pages.css) */
+.hero,
+.hero-tags strong,
+.hero-stat .num,
+.brand-text,
+.faq-q,
+.showcase-corner strong,
+.rp-label {
+  color: #ebecf0;
+}
+
+/* Burger menu (mobile), kreski były czarne (background: var(--ink)),
+   na ciemnym headerze byłyby ledwo widoczne. */
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  background: #ebecf0;
+}
+
+/* Mobilne menu rozwinięte, tło bierze --paper (szare),
+   linki dziedziczą jasny tekst z body, ale dla pewności explicit: */
+@media (max-width: 1100px) {
+  .nav.open a {
+    color: #ebecf0;
+  }
+}
+
+/* =========================================================
+   Panel admina, modal ma własne tło --paper
+   ========================================================= */
+
+.admin-shell {
+  color: #ebecf0;
+}
+
+.admin-h,
+.admin-row-input input,
+.admin-row-input textarea,
+.admin-field input,
+.admin-close-x {
+  color: #ebecf0;
+}
+
+.admin-close-x {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================================================
+   Footer mega watermark, było semi-transparent paper na ink.
+   Teraz paper jest szare, ink jest jeszcze ciemniejsze, więc
+   stroke z paper-alpha na ink nadal działa, ale poprawiam żeby
+   nie wyglądało za jaskrawo (bo paper jest teraz bliżej ink).
+   ========================================================= */
+
+.footer-mega {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   Page-hero decoration grid, było paper-alpha na ink.
+   Linie grid zostawiam jasne, działa.
+   ========================================================= */
+
+/* Reszta sekcji ciemnych (--section-dark, .coverage, .footer, .topbar)
+   ma bg = var(--ink) który jest teraz #1a1c22, a tekst = var(--paper)
+   który jest teraz #34363e (szary, jaśniejszy niż ink), więc dalej
+   kontrastuje, ale słabo. Ujasniam tekst na ciemnych sekcjach: */
+.section-dark,
+.footer,
+.topbar,
+.coverage,
+.interstitial {
+  color: #ebecf0;
+}
+
+/* Page-hero (header podstron) ma bg = ink i kolor = paper, też ujasniam */
+.page-hero {
+  color: #ebecf0;
+}
+.page-hero h1 {
+  color: #ebecf0;
+}
+
+/* Footer brand text */
+.footer-brand-line {
+  color: #ebecf0;
+}
+
+/* Header sticky, tło bierze --paper, dolny border --line (jasny alpha).
+   Nic do roboty. */

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cennik · Zamów kontener, PUKiB</title>
+  <meta name="description" content="Aktualny cennik 2026 wynajmu kontenerów. Zamów online, wybierz rozmiar, strefę i podaj dane.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/theme-gray.css">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <span><span class="topbar-dot" data-hours-dot></span><span data-hours-label>Pracujemy</span>, pn-pt 6:00-15:30</span>
+      <span class="topbar-hide-mobile">16 lat na rynku · BDO 000011532</span>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:503759504" class="topbar-link">503 759 504</a>
+      <a href="tel:502195472" class="topbar-link topbar-hide-mobile">502 195 472</a>
+      <a href="mailto:kontenery@pukib.pl" class="topbar-link">kontenery@pukib.pl</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="" class="brand-logo">
+      <div>
+        <div class="brand-text">PUKiB</div>
+        <div class="brand-sub">Kontenery · Śląsk</div>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <nav class="nav">
+      <a href="index.html">Strona główna</a>
+      <a href="index.html#o-nas">O firmie</a>
+      <a href="index.html#biznes">Dla biznesu</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#fb">Aktualności</a>
+      <a href="index.html#realizacje">Realizacje</a>
+      <a href="#cennik">Cennik</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a href="#zamow" class="nav-cta">
+        Zamów kontener
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Page hero -->
+  <section class="page-hero">
+    <div class="page-hero-grid">
+      <div>
+        <div class="page-hero-meta">
+          <div class="crumb"><span><a href="index.html">Strona główna</a></span><span>Cennik · Zamów</span></div>
+          <div>Cennik 2026 · Zamówienie</div>
+        </div>
+        <h1>Zamów. <em>Wycena</em> w kilka sekund.</h1>
+      </div>
+      <div class="page-hero-meta" style="text-align:right;">
+        <div>Wszystkie ceny netto · 8% VAT</div>
+        <div style="margin-top:8px;">+ koszt transportu wg strefy</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER SECTION, form + animated mini visualization side-by-side -->
+  <section class="section order-section" id="zamow">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:32px;">
+        <div>
+          <div class="kicker" style="color: var(--paper-3); margin-bottom:16px;">/ Krok po kroku</div>
+          <h2 class="display section-title">Zamów <em>kontener</em>.</h2>
+        </div>
+        <p class="section-intro">Wybierz kontener i strefę, podaj dane, wyślemy potwierdzenie i ustalimy termin podstawienia. Po lewej widzisz wybrany kontener w skali z człowiekiem 1,80 m dla porównania.</p>
+      </div>
+
+      <form class="order-grid" data-order-form onsubmit="return false;">
+        <!-- Left column: Visualization + Form steps -->
+        <div>
+
+          <!-- Step 1 - sizes -->
+          <div class="order-step">
+            <h3 data-step="1">Wybierz kontener</h3>
+            <div class="option-row">
+              <button type="button" class="option-btn active" data-size-btn="gruz-7" data-stage-size="7">
+                <div class="ob-size">KP 7</div>
+                <div class="ob-name">Gruz</div>
+                <div class="ob-price" data-pukib-price="gruz-7">900 zł</div>
+              </button>
+              <button type="button" class="option-btn" data-size-btn="mix-7" data-stage-size="7">
+                <div class="ob-size">KP 7</div>
+                <div class="ob-name">Budowlane zmieszane</div>
+                <div class="ob-price" data-pukib-price="mix-7">1 300 zł</div>
+              </button>
+              <button type="button" class="option-btn" data-size-btn="mix-10" data-stage-size="10">
+                <div class="ob-size">KP 10</div>
+                <div class="ob-name">Budowlane zmieszane</div>
+                <div class="ob-price" data-pukib-price="mix-10">1 800 zł</div>
+              </button>
+              <button type="button" class="option-btn" data-size-btn="mix-36" data-stage-size="36">
+                <div class="ob-size">KP 36</div>
+                <div class="ob-name">Budowlane zmieszane</div>
+                <div class="ob-price" data-pukib-price="mix-36">3 700 zł</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 - zone -->
+          <div class="order-step">
+            <h3 data-step="2">Wybierz strefę transportu</h3>
+            <div class="zone-row">
+              <button type="button" class="zone-btn active" data-waste-btn="strefa1">
+                <div class="zb-num" data-pukib-zone-price="strefa1">100 zł</div>
+                <div class="zb-price" data-pukib-zone-name="strefa1">Strefa I</div>
+                <div class="zb-cities">Jastrzębie / Rybnik / Żory · +9</div>
+              </button>
+              <button type="button" class="zone-btn" data-waste-btn="strefa2">
+                <div class="zb-num" data-pukib-zone-price="strefa2">200 zł</div>
+                <div class="zb-price" data-pukib-zone-name="strefa2">Strefa II</div>
+                <div class="zb-cities">Pszczyna / Knurów · +10</div>
+              </button>
+              <button type="button" class="zone-btn" data-waste-btn="strefa3">
+                <div class="zb-num" data-pukib-zone-price="strefa3">300 zł</div>
+                <div class="zb-price" data-pukib-zone-name="strefa3">Strefa III</div>
+                <div class="zb-cities">Gliwice / Bielsko / Tychy · +19</div>
+              </button>
+              <button type="button" class="zone-btn" data-waste-btn="strefa4">
+                <div class="zb-num" data-pukib-zone-price="strefa4">400 zł</div>
+                <div class="zb-price" data-pukib-zone-name="strefa4">Strefa IV</div>
+                <div class="zb-cities">Katowice</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3 - data -->
+          <div class="order-step">
+            <h3 data-step="3">Twoje dane</h3>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name">Imię i nazwisko</label>
+                <input id="f-name" name="name" type="text" placeholder="Jan Kowalski">
+              </div>
+              <div class="field">
+                <label for="f-phone">Telefon *</label>
+                <input id="f-phone" name="phone" type="tel" required placeholder="500 000 000">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email">E-mail *</label>
+                <input id="f-email" name="email" type="email" required placeholder="jan@example.pl">
+              </div>
+              <div class="field">
+                <label for="f-date">Preferowany termin</label>
+                <input id="f-date" name="date" type="date">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-city">Miejscowość *</label>
+                <input id="f-city" name="city" type="text" required placeholder="np. Katowice">
+              </div>
+              <div class="field">
+                <label for="f-address">Adres podstawienia</label>
+                <input id="f-address" name="address" type="text" placeholder="ul. i numer">
+              </div>
+            </div>
+            <div class="field" style="margin-top:14px;">
+              <label for="f-notes">Dodatkowe informacje</label>
+              <textarea id="f-notes" name="notes" rows="4" placeholder="Np. dostęp od strony podwórka, brama o szerokości 3 m, planowana zawartość..."></textarea>
+            </div>
+          </div>
+
+          <!-- Step 4 - downloadable form / upload -->
+          <div class="order-step">
+            <h3 data-step="4">Formularz dodatkowy <span style="font-size:13px; font-weight:400; text-transform:none; letter-spacing:0; color:var(--paper-3); margin-left:8px;">(opcjonalnie)</span></h3>
+            <p class="order-form-intro">Z wypełnionym formularzem realizujemy zamówienie szybciej. Pobierz, wypełnij, dołącz do zgłoszenia.</p>
+            <div class="form-actions">
+              <a href="assets/forms/formularz-zamowienia.pdf" download="formularz-zamowienia.pdf" class="form-download-btn" data-pukib-pdf>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+                <span>Pobierz formularz PDF</span>
+              </a>
+              <label class="form-upload-btn" for="f-form-file">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21V9M7 14l5-5 5 5M5 3h14"/></svg>
+                <span data-upload-label>Dołącz wypełniony formularz</span>
+                <input id="f-form-file" name="formfile" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" data-form-file>
+              </label>
+            </div>
+            <p class="form-upload-hint">Po wysłaniu zamówienia otworzy się Twój klient pocztowy. <strong>Pamiętaj o dołączeniu pliku do wiadomości.</strong></p>
+          </div>
+        </div>
+
+        <!-- Sticky summary aside with mini 2D visualization -->
+        <aside class="order-summary" data-showcase>
+          <!-- 2D mini visualization (changes when size button clicked) -->
+          <div class="order-viz-mini">
+            <div class="order-viz-mini-label">/ Wizualizacja 2D · 1:38</div>
+            <svg viewBox="0 0 380 210" class="order-viz-mini-svg" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="blr" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+                </filter>
+                <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 Z" fill="#dc2626"/>
+                </marker>
+                <pattern id="vizg2" width="15" height="15" patternUnits="userSpaceOnUse">
+                  <path d="M 15 0 L 0 0 0 15" fill="none" stroke="rgba(244,241,234,0.04)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <rect width="380" height="210" fill="url(#vizg2)"/>
+
+              <!-- Ground baseline -->
+              <line x1="20" y1="170" x2="360" y2="170" stroke="rgba(244,241,234,0.18)" stroke-dasharray="2 3" stroke-width="0.7"/>
+
+              <!-- Reference human at x=30, foot at y=170, head top at y=102 (1.8m × 38 = 68px) -->
+              <!-- Proportions: head 10px, neck 3, torso 21px, legs 35px = 68px -->
+              <g class="human" transform="translate(30, 102)">
+                <!-- head -->
+                <circle cx="0" cy="5" r="5" fill="#dcd4c2"/>
+                <!-- neck -->
+                <rect x="-2" y="9.5" width="4" height="3" fill="#dcd4c2"/>
+                <!-- torso (trapezoid wider at shoulders) -->
+                <path d="M -9 12.5 L 9 12.5 L 7 33 L -7 33 Z" fill="#dcd4c2"/>
+                <!-- left arm -->
+                <path d="M -10 13.5 L -11 31 L -8 31 L -8.5 13.5 Z" fill="#dcd4c2"/>
+                <!-- right arm -->
+                <path d="M 10 13.5 L 11 31 L 8 31 L 8.5 13.5 Z" fill="#dcd4c2"/>
+                <!-- left leg -->
+                <path d="M -7 33 L -1 33 L -2 68 L -6 68 Z" fill="#dcd4c2"/>
+                <!-- right leg -->
+                <path d="M 1 33 L 7 33 L 6 68 L 2 68 Z" fill="#dcd4c2"/>
+              </g>
+              <!-- Human dimension -->
+              <line x1="14" y1="102" x2="14" y2="170" stroke="#dc2626" stroke-width="0.8" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+              <text x="14" y="92" font-family="JetBrains Mono, monospace" font-size="8" fill="#dc2626" text-anchor="middle" font-weight="700">1,80 m</text>
+
+  <!-- 2D side-elevation stages, v2 -->
+    <g class="stage" data-size-stage="7">
+      <ellipse cx="161.5" cy="174" rx="66.5" ry="3" fill="rgba(10,10,10,0.35)" filter="url(#blr)"/>
+      <rect x="95.0" y="124.4" width="133.0" height="45.6" fill="#4d8c2f" stroke="#1a3d10" stroke-width="1.5"/>
+      <rect x="95.0" y="124.4" width="133.0" height="6" fill="#3a6f1f"/>
+      <rect x="95.0" y="165.0" width="133.0" height="5" fill="#2a5418"/>
+      <g opacity="0.4" stroke="#1a3d10" stroke-width="1">
+        <line x1="117.2" y1="130.4" x2="117.2" y2="165.0"/>
+        <line x1="139.3" y1="130.4" x2="139.3" y2="165.0"/>
+        <line x1="161.5" y1="130.4" x2="161.5" y2="165.0"/>
+        <line x1="183.7" y1="130.4" x2="183.7" y2="165.0"/>
+        <line x1="205.8" y1="130.4" x2="205.8" y2="165.0"/>
+      </g>
+      <rect x="221.2" y="130.4" width="6.8" height="39.6" fill="#3a6f1f" opacity="0.5"/>
+      <text x="161.5" y="150.1" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="9.6" fill="rgba(245,241,234,0.92)" text-anchor="middle" letter-spacing="0.5">PUKiB.pl</text>
+      <line x1="95.0" y1="188" x2="228.0" y2="188" stroke="#dc2626" stroke-width="0.9" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+      <rect x="139.5" y="181" width="44" height="14" fill="#1a1a1a" stroke="#dc2626" stroke-width="0.6"/>
+      <text x="161.5" y="191" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">L: 3,5 m</text>
+      <line x1="250.0" y1="124.4" x2="250.0" y2="170.0" stroke="#dc2626" stroke-width="0.9" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+      <rect x="229.0" y="140.2" width="42" height="14" fill="#1a1a1a" stroke="#dc2626" stroke-width="0.6"/>
+      <text x="250.0" y="152.2" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">H: 1,2 m</text>
+      <text x="99.0" y="118.4" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="0.05em" fill="#9a958a">szer. 1,7 m</text>
+      <text x="340" y="32" font-family="Big Shoulders Display" font-weight="900" font-size="38" fill="#f4f1ea" text-anchor="end" letter-spacing="-0.02em">KP 7</text>
+      <text x="340" y="48" font-family="JetBrains Mono" font-size="8" font-weight="700" letter-spacing="0.18em" fill="#9a958a" text-anchor="end">BRAMOWIEC MAŁY</text>
+    </g>
+
+    <g class="stage" data-size-stage="10">
+      <ellipse cx="161.5" cy="174" rx="66.5" ry="3" fill="rgba(10,10,10,0.35)" filter="url(#blr)"/>
+      <rect x="95.0" y="105.4" width="133.0" height="64.6" fill="#4d8c2f" stroke="#1a3d10" stroke-width="1.5"/>
+      <rect x="95.0" y="105.4" width="133.0" height="6" fill="#3a6f1f"/>
+      <rect x="95.0" y="165.0" width="133.0" height="5" fill="#2a5418"/>
+      <g opacity="0.4" stroke="#1a3d10" stroke-width="1">
+        <line x1="117.2" y1="111.4" x2="117.2" y2="165.0"/>
+        <line x1="139.3" y1="111.4" x2="139.3" y2="165.0"/>
+        <line x1="161.5" y1="111.4" x2="161.5" y2="165.0"/>
+        <line x1="183.7" y1="111.4" x2="183.7" y2="165.0"/>
+        <line x1="205.8" y1="111.4" x2="205.8" y2="165.0"/>
+      </g>
+      <rect x="221.2" y="111.4" width="6.8" height="58.6" fill="#3a6f1f" opacity="0.5"/>
+      <text x="161.5" y="141.8" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="13.6" fill="rgba(245,241,234,0.92)" text-anchor="middle" letter-spacing="0.5">PUKiB.pl</text>
+      <line x1="95.0" y1="188" x2="228.0" y2="188" stroke="#dc2626" stroke-width="0.9" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+      <rect x="139.5" y="181" width="44" height="14" fill="#1a1a1a" stroke="#dc2626" stroke-width="0.6"/>
+      <text x="161.5" y="191" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">L: 3,5 m</text>
+      <line x1="250.0" y1="105.4" x2="250.0" y2="170.0" stroke="#dc2626" stroke-width="0.9" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+      <rect x="229.0" y="130.7" width="42" height="14" fill="#1a1a1a" stroke="#dc2626" stroke-width="0.6"/>
+      <text x="250.0" y="142.7" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">H: 1,7 m</text>
+      <text x="99.0" y="99.4" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="0.05em" fill="#9a958a">szer. 1,7 m</text>
+      <text x="340" y="32" font-family="Big Shoulders Display" font-weight="900" font-size="38" fill="#f4f1ea" text-anchor="end" letter-spacing="-0.02em">KP 10</text>
+      <text x="340" y="48" font-family="JetBrains Mono" font-size="8" font-weight="700" letter-spacing="0.18em" fill="#9a958a" text-anchor="end">BRAMOWIEC ŚREDNI</text>
+    </g>
+
+    <g class="stage" data-size-stage="36">
+      <ellipse cx="218.5" cy="174" rx="123.5" ry="3" fill="rgba(10,10,10,0.35)" filter="url(#blr)"/>
+      <rect x="95.0" y="82.2" width="247.0" height="87.8" fill="#4d8c2f" stroke="#1a3d10" stroke-width="1.5"/>
+      <rect x="95.0" y="82.2" width="247.0" height="6" fill="#3a6f1f"/>
+      <rect x="95.0" y="165.0" width="247.0" height="5" fill="#2a5418"/>
+      <g opacity="0.4" stroke="#1a3d10" stroke-width="1">
+        <line x1="119.7" y1="88.2" x2="119.7" y2="165.0"/>
+        <line x1="144.4" y1="88.2" x2="144.4" y2="165.0"/>
+        <line x1="169.1" y1="88.2" x2="169.1" y2="165.0"/>
+        <line x1="193.8" y1="88.2" x2="193.8" y2="165.0"/>
+        <line x1="218.5" y1="88.2" x2="218.5" y2="165.0"/>
+        <line x1="243.2" y1="88.2" x2="243.2" y2="165.0"/>
+        <line x1="267.9" y1="88.2" x2="267.9" y2="165.0"/>
+        <line x1="292.6" y1="88.2" x2="292.6" y2="165.0"/>
+        <line x1="317.3" y1="88.2" x2="317.3" y2="165.0"/>
+      </g>
+      <rect x="334.0" y="88.2" width="8.0" height="81.8" fill="#3a6f1f" opacity="0.5"/>
+      <text x="218.5" y="131.7" font-family="Big Shoulders Display, Impact, sans-serif" font-weight="900" font-size="18.5" fill="rgba(245,241,234,0.92)" text-anchor="middle" letter-spacing="0.5">PUKiB.pl</text>
+      <line x1="95.0" y1="188" x2="342.0" y2="188" stroke="#dc2626" stroke-width="0.9" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+      <rect x="196.5" y="181" width="44" height="14" fill="#1a1a1a" stroke="#dc2626" stroke-width="0.6"/>
+      <text x="218.5" y="191" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">L: 6,5 m</text>
+      <line x1="352.0" y1="82.2" x2="352.0" y2="170.0" stroke="#dc2626" stroke-width="0.9" marker-start="url(#arr2)" marker-end="url(#arr2)"/>
+      <rect x="331.0" y="119.1" width="42" height="14" fill="#1a1a1a" stroke="#dc2626" stroke-width="0.6"/>
+      <text x="352.0" y="131.1" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#dc2626" text-anchor="middle">H: 2,31 m</text>
+      <text x="99.0" y="76.2" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="0.05em" fill="#9a958a">szer. 2,4 m</text>
+      <text x="340" y="32" font-family="Big Shoulders Display" font-weight="900" font-size="38" fill="#f4f1ea" text-anchor="end" letter-spacing="-0.02em">KP 36</text>
+      <text x="340" y="48" font-family="JetBrains Mono" font-size="8" font-weight="700" letter-spacing="0.18em" fill="#9a958a" text-anchor="end">HAKOWIEC DUŻY</text>
+    </g>
+
+
+            </svg>
+          </div>
+
+          <h4>Podsumowanie</h4>
+          <div class="summary-row">
+            <div>
+              <span class="summary-label">Kontener</span>
+              <span data-summary-size>Gruz · KP 7</span>
+            </div>
+            <div class="summary-value" data-summary-price>900 zł</div>
+          </div>
+          <div class="summary-row">
+            <div>
+              <span class="summary-label">Transport</span>
+              <span>Strefa wybrana</span>
+            </div>
+            <div class="summary-value" data-summary-transport>100 zł</div>
+          </div>
+          <div class="summary-total">
+            <div>
+              <span class="total-label">Razem</span>
+              <span class="total-vat">brutto z VAT 8%</span>
+            </div>
+            <div class="total-amount" data-summary-total>1 080 zł</div>
+          </div>
+          <button class="summary-submit" data-submit type="submit">
+            Wyślij zamówienie →
+          </button>
+          <p class="summary-note">Wyślemy zamówienie prosto na kontenery@pukib.pl.<br>Albo zadzwoń: <a href="tel:503759504" style="color:var(--paper); border-bottom:1px solid var(--paper);">503 759 504</a> lub <a href="tel:502195472" style="color:var(--paper); border-bottom:1px solid var(--paper);">502 195 472</a></p>
+        </aside>
+      </form>
+    </div>
+  </section>
+
+  <!-- Pricing tables -->
+  <section class="section pricing-section" id="cennik">
+    <div class="container">
+
+      <div class="kicker" style="margin-bottom:16px;">/ 01 / Kontenery</div>
+      <h2 class="display" style="font-size:clamp(36px,5vw,64px); margin-bottom:32px; max-width:18ch;">Cennik <em style="font-style:normal;color:var(--red);">kontenerów</em>.</h2>
+
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Rodzaj odpadów</th>
+            <th>Wielkość</th>
+            <th style="text-align:right;" data-pukib-price-header>Cena netto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gruz</strong><br><span style="color:var(--ink-3); font-size:13px;">Większe ilości, wycena indywidualna</span></td>
+            <td>KP 7</td>
+            <td class="price-cell" data-pukib-price="gruz-7">900 zł</td>
+          </tr>
+          <tr>
+            <td rowspan="3"><strong>Odpady budowlane zmieszane</strong></td>
+            <td>KP 7</td>
+            <td class="price-cell" data-pukib-price="mix-7">1 300 zł</td>
+          </tr>
+          <tr>
+            <td>KP 10</td>
+            <td class="price-cell" data-pukib-price="mix-10">1 800 zł</td>
+          </tr>
+          <tr>
+            <td>KP 36</td>
+            <td class="price-cell" data-pukib-price="mix-36">3 700 zł</td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Dzierżawa kontenera powyżej 5 dni</strong><br><span style="color:var(--ink-3); font-size:13px;">Każdy dodatkowy dzień</span></td>
+            <td class="price-cell" style="font-size:18px;" data-pukib-price="rent-daily" data-pukib-suffix=" / 24h">25 zł / 24h</td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Materiały izolacyjne</strong><br><span style="color:var(--ink-3); font-size:13px;">Styropian, wełna mineralna</span></td>
+            <td class="price-cell" data-pukib-price="materialy-izolacyjne">do uzgodnienia</td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Papa</strong></td>
+            <td class="price-cell" data-pukib-price="papa">do uzgodnienia</td>
+          </tr>
+          <tr>
+            <td colspan="2"><strong>Pozostałe odpady</strong><br><span style="color:var(--ink-3); font-size:13px;">Makulatura, tworzywa sztuczne, szkło i inne</span></td>
+            <td class="price-cell" data-pukib-price="pozostale">Indywidualna wycena</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="kicker" style="margin-bottom:16px; margin-top:64px;">/ 02 / Odpady do segregacji</div>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Rodzaj odpadów</th>
+            <th>Wielkość</th>
+            <th style="text-align:right;" data-pukib-price-header>Cena netto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2"><strong>Odpady budowlane do segregacji</strong></td>
+            <td>Do 1 Mg (tony)</td>
+            <td class="price-cell" data-pukib-price="budowlane-segregacja-1">1 200 zł</td>
+          </tr>
+          <tr>
+            <td>Każda kolejna Mg</td>
+            <td class="price-cell" data-pukib-price="budowlane-segregacja-n">1 000 zł</td>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>Odpady wielkogabarytowe</strong><br><span style="color:var(--ink-3); font-size:13px;">Meble, AGD, materace, dywany, opony</span></td>
+            <td>Do 1 Mg (tony)</td>
+            <td class="price-cell" data-pukib-price="wielkogabarytowe-1">1 200 zł</td>
+          </tr>
+          <tr>
+            <td>Każda kolejna Mg</td>
+            <td class="price-cell" data-pukib-price="wielkogabarytowe-n">1 100 zł</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="kicker" style="margin-bottom:16px; margin-top:64px;">/ 03 / Transport · Strefy</div>
+      <h2 class="display" style="font-size:clamp(36px,5vw,64px); margin-bottom:32px; max-width:18ch;">Cztery <em style="font-style:normal;color:var(--red);">strefy</em>, jasne stawki.</h2>
+
+      <div class="zones-grid">
+        <div class="zone-card">
+          <div class="zone-num" data-pukib-zone-name="strefa1">STREFA I</div>
+          <div class="zone-price"><span data-pukib-zone-price="strefa1">100 zł</span><small>netto + 8% VAT</small></div>
+          <div class="zone-cities" data-pukib-zone-cities="strefa1">
+            <span>Jastrzębie-Zdrój</span><span>Mszana</span><span>Godów</span><span>Gorzyce</span><span>Świerklany</span><span>Wodzisław Śląski</span><span>Pawłowice</span><span>Rybnik</span><span>Żory</span><span>Suszec</span><span>Strumień</span><span>Zebrzydowice</span><span>Hażlach</span>
+          </div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-num" data-pukib-zone-name="strefa2">STREFA II</div>
+          <div class="zone-price"><span data-pukib-zone-price="strefa2">200 zł</span><small>netto + 8% VAT</small></div>
+          <div class="zone-cities" data-pukib-zone-cities="strefa2">
+            <span>Hażlach</span><span>Dębowiec</span><span>Skoczów</span><span>Chybie</span><span>Pszczyna</span><span>Goczałkowice-Zdrój</span><span>Orzesze</span><span>Radlin</span><span>Knurów</span><span>Czerwionka-Leszczyny</span><span>Pszów</span><span>Pilchowice</span><span>Gierałtowice</span>
+          </div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-num" data-pukib-zone-name="strefa3">STREFA III</div>
+          <div class="zone-price"><span data-pukib-zone-price="strefa3">300 zł</span><small>netto + 8% VAT</small></div>
+          <div class="zone-cities" data-pukib-zone-cities="strefa3">
+            <span>Cieszyn</span><span>Goleszów</span><span>Ustroń</span><span>Jasienica</span><span>Czechowice-Dziedzice</span><span>Bielsko-Biała</span><span>Miedźna</span><span>Bojszowy</span><span>Kobiór</span><span>Gliwice</span><span>Tychy</span><span>Mikołów</span><span>Ruda Śląska</span><span>Zabrze</span><span>Kornowac</span><span>Racibórz</span><span>Krzanowice</span><span>Nędza</span><span>Bieruń</span><span>Lędziny</span><span>Mysłowice</span><span>Wyry</span>
+          </div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-num" data-pukib-zone-name="strefa4">STREFA IV</div>
+          <div class="zone-price"><span data-pukib-zone-price="strefa4">400 zł</span><small>netto + 8% VAT</small></div>
+          <div class="zone-cities" data-pukib-zone-cities="strefa4">
+            <span>Katowice</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand-line">PUKiB</div>
+          <p class="footer-brand-text">Przedsiębiorstwo Usług Komunalnych i Bytowych. Wynajem kontenerów i wywóz odpadów na terenie całego Śląska.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Strona</h4>
+          <ul>
+            <li><a href="index.html#o-nas">O firmie</a></li>
+            <li><a href="index.html#biznes">Dla biznesu</a></li>
+            <li><a href="cennik.html">Cennik · Zamów</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:503759504">503 759 504</a></li>
+            <li><a href="mailto:kontenery@pukib.pl">kontenery@pukib.pl</a></li>
+            <li><a href="mailto:dyspozytor@pukib.pl">dyspozytor@pukib.pl</a></li>
+            <li><a href="mailto:bok@pukib.pl">bok@pukib.pl</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Adres</h4>
+          <ul>
+            <li>Siedziba:<br>ul. Chudoby 4/1<br>44-100 Gliwice</li>
+            <li style="margin-top:12px;">Baza transportowa:<br>ul. Dębina 16<br>44-335 Jastrzębie-Zdrój</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-mega" aria-hidden="true">PUKiB</div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> PUKiB · NIP 631 262 02 53 · BDO 000011532</span>
+        <span>KRS 0003645589 · <button type="button" class="admin-trigger" data-admin-trigger>Panel admina</button></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/admin.js"></script>
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+/* =========================================================
+   PUKiB Admin Panel - styling
+   Spójny z industrial editorial design system reszty serwisu
+   ========================================================= */
+
+/* Link "Panel admina" w stopce */
+.admin-trigger {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.admin-trigger::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.admin-trigger:hover {
+  color: var(--red);
+}
+
+.admin-trigger:hover::after {
+  opacity: 1;
+}
+
+/* Modal kontener */
+.admin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.admin-modal.open {
+  display: flex;
+}
+
+.admin-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.admin-shell {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  max-height: 92vh;
+  margin: auto;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-y: auto;
+  padding: 48px 56px 56px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+  border-top: 4px solid var(--red);
+}
+
+@media (max-width: 700px) {
+  .admin-shell { padding: 32px 24px 40px; max-height: 100vh; }
+}
+
+.admin-close-x {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid var(--line-soft);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 2;
+}
+
+.admin-close-x:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* Typografia panelu */
+.admin-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-kicker::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.admin-h {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.admin-h em {
+  font-style: normal;
+  color: var(--red);
+}
+
+.admin-intro {
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: 28px;
+  max-width: 50ch;
+}
+
+/* Login screen */
+.admin-login-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.admin-field span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.admin-field input {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.admin-field input:focus {
+  outline: none;
+  border-color: var(--red);
+}
+
+.admin-error {
+  color: var(--red);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+
+/* Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--line-soft);
+  flex-wrap: wrap;
+}
+
+.admin-tabs button {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding: 14px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.admin-tabs button:hover {
+  color: var(--ink);
+}
+
+.admin-tabs button.active {
+  color: var(--ink);
+}
+
+.admin-tabs button.active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 2px;
+  background: var(--red);
+}
+
+/* Panel content */
+.admin-panel {
+  padding: 4px 0;
+}
+
+.admin-panel[hidden] {
+  display: none;
+}
+
+.admin-panel-intro {
+  color: var(--ink-3);
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  max-width: 60ch;
+}
+
+.admin-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.admin-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+@media (max-width: 600px) {
+  .admin-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+.admin-row-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+
+.admin-row-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-row-input input,
+.admin-row-input textarea {
+  padding: 10px 14px;
+  border: 1px solid var(--line-soft);
+  background: var(--paper-2);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.admin-row-input input:focus,
+.admin-row-input textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  background: var(--paper);
+}
+
+.admin-row-input textarea {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.admin-input-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  opacity: 0.7;
+}
+
+/* Strefy grid */
+.admin-zones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 700px) {
+  .admin-zones-grid { grid-template-columns: 1fr; }
+}
+
+.admin-zone-card {
+  background: var(--paper-2);
+  padding: 20px;
+  border: 1px solid var(--line-soft);
+}
+
+.admin-zone-head {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+
+.admin-zone-card .admin-row {
+  grid-template-columns: 1fr;
+  gap: 4px;
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+/* PDF panel */
+.admin-current {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-3);
+  padding: 16px;
+  background: var(--paper-2);
+  border-left: 3px solid var(--red);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.admin-pdf-actions,
+.admin-data-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.admin-warn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  line-height: 1.55;
+  padding: 14px;
+  background: rgba(220, 38, 38, 0.06);
+  border-left: 3px solid var(--red);
+  max-width: 70ch;
+}
+
+/* Akcje, przyciski */
+.admin-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-radius: var(--radius);
+}
+
+.admin-btn-primary {
+  background: var(--red);
+  color: var(--paper);
+}
+
+.admin-btn-primary:hover {
+  background: var(--red-deep);
+}
+
+.admin-btn-secondary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.admin-btn-secondary:hover {
+  background: var(--ink-3);
+}
+
+.admin-btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.admin-btn-ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* Status flash */
+.admin-status {
+  position: sticky;
+  bottom: 0;
+  margin-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 12px 18px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  border-left: 4px solid #2eea7e;
+}
+
+.admin-status.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   Klikalny nagłówek "Cena netto / brutto" w tabeli cennika
+   ========================================================= */
+
+[data-pukib-price-header] {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: color 0.2s;
+  outline: none;
+}
+
+[data-pukib-price-header]:hover,
+[data-pukib-price-header]:focus-visible {
+  color: var(--red) !important;
+}
+
+[data-pukib-price-header]:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.price-header-mode {
+  font-size: 0.85em;
+  opacity: 0.55;
+  margin-left: 4px;
+  letter-spacing: 0.12em;
+}
+
+.price-header-swap {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 1.1em;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--red);
+  opacity: 0.7;
+  transform: translateY(1px);
+  transition: opacity 0.2s, transform 0.25s;
+}
+
+[data-pukib-price-header]:hover .price-header-swap {
+  opacity: 1;
+  transform: translateY(1px) rotate(180deg);
+}
