@@ -75,9 +75,12 @@ body { color: #ffffff; }
 .showcase-pick.active,
 .option-btn.active,
 .zone-btn.active,
-.zone-card.active {
+.zone-card.active,
+.pricing-table thead,
+.pricing-table thead th {
   --paper: #ffffff;
   --paper-3: #ffffff;
+  color: #ffffff;
 }
 
 /* =========================================================
