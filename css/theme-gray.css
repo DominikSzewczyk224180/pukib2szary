@@ -168,6 +168,24 @@ body { color: #ffffff; }
 }
 
 /* =========================================================
+   .btn-ghost (przycisk "Sprawdź cennik" w hero, "Czytaj" w showcase
+   itp.) miał color: var(--paper) i kremowy alpha border, oryginalnie
+   zaprojektowany pod ciemne sekcje. W hero jest na szarym tle,
+   więc bez tego overrida znika kompletnie.
+   ========================================================= */
+
+.btn-ghost {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-ghost:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* =========================================================
    Mobile menu rozwinięte
    ========================================================= */
 
